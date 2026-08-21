@@ -58,5 +58,11 @@ app.use("/api/shop/review", shopReviewRouter);
 
 app.use("/api/common/feature", commonFeatureRouter);
 
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "working",
+  });
+});
+
 
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
